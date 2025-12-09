@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "🟢 Dev",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "--flavor",
+          "dev",
+          "--dart-define=ENV=dev"
+        ]
+      },
+      {
+        "name": "🔴 Prod",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "--flavor",
+          "prod",
+          "--dart-define=ENV=prod"
+        ]
+      },
+      {
+        "name": "🟢 Dev (Release)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "release",
+        "args": [
+          "--flavor",
+          "dev",
+          "--dart-define=ENV=dev"
+        ]
+      },
+      {
+        "name": "🔴 Prod (Release)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "release",
+        "args": [
+          "--flavor",
+          "prod",
+          "--dart-define=ENV=prod"
+        ]
+      }
+    ]
+  }
