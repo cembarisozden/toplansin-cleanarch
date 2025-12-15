@@ -513,6 +513,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.0"
+  firebase_remote_config:
+    dependency: "direct main"
+    description:
+      name: firebase_remote_config
+      sha256: "5d23c7021e69fbc9ef489ebcf4b1b941575e34ebacc7f20173c2a97f37f45b74"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.2"
+  firebase_remote_config_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_remote_config_platform_interface
+      sha256: b9c80a6cbc43367fdb2d4f441546e7c5330e5dc256659b58f5c0ab67cd332f43
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
+  firebase_remote_config_web:
+    dependency: transitive
+    description:
+      name: firebase_remote_config_web
+      sha256: "2a465562d7d35c3a7f4956d440d5ac171e6ce65974b2225fd17b45303f88aa94"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.10.1"
   firebase_storage:
     dependency: "direct main"
     description:
@@ -574,6 +598,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  flutter_screenutil:
+    dependency: "direct main"
+    description:
+      name: flutter_screenutil
+      sha256: "8239210dd68bee6b0577aa4a090890342d04a136ce1c81f98ee513fc0ce891de"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.9.3"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -760,6 +792,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  logger:
+    dependency: "direct main"
+    description:
+      name: logger
+      sha256: a7967e31b703831a893bbc3c3dd11db08126fe5f369b5c648a36f821979f5be3
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.6.2"
   logging:
     dependency: transitive
     description:

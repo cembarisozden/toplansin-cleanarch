@@ -8,14 +8,16 @@ import 'package:toplansin_cleanarch/injection_container/injection_container.dart
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Dependency Injection başlat
-  await configureDependencies();
-  AppLogger.debug('💉 Dependencies configured');
-
-  // Firebase başlat
+  // 1. Önce Firebase
   await FirebaseConfig.initialize();
-  AppLogger.info('🔥 Firebase initialized: ${EnvConfig.current.name.toUpperCase()}');
 
-  // Uygulamayı başlat
+  // 2. Sonra DI
+  await configureDependencies();
+
+  // 3. Artık DI'dan alabilirsin
+  final logger = sl<AppLogger>();
+  logger.info('🔥 Firebase initialized: ${EnvConfig.current.name.toUpperCase()}');
+  logger.debug('💉 Dependencies configured');
+
   runApp(const ToplansinApp());
 }

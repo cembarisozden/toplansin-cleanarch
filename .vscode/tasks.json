@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build Runner",
+        "type": "shell",
+        "command": "flutter pub run build_runner build --delete-conflicting-outputs",
+        "group": "build",
+        "problemMatcher": []
+      },
+      {
+        "label": "Build Runner (Watch)",
+        "type": "shell", 
+        "command": "flutter pub run build_runner watch --delete-conflicting-outputs",
+        "group": "build",
+        "problemMatcher": []
+      }
+    ]
+  }

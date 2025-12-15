@@ -63,3 +63,7 @@ coverage/
 
 # Cursor
 .cursor/
+
+# Firebase options (contains API keys)
+lib/firebase_options_dev.dart
+lib/firebase_options_prod.dart

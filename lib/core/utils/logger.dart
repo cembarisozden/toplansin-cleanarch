@@ -1,37 +1,50 @@
-import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
+import 'package:logger/logger.dart';
 import 'package:toplansin_cleanarch/core/config/env_config.dart';
 
-/// Uygulama logger'ı
+/// Uygulama logger'ı - DI ile singleton
+@lazySingleton
 class AppLogger {
-  AppLogger._();
+  final Logger _logger;
 
-  static void debug(String message, {String? tag}) {
+  AppLogger()
+      : _logger = Logger(
+          printer: PrettyPrinter(
+            methodCount: 0,
+            errorMethodCount: 5,
+            lineLength: 80,
+            colors: true,
+            printEmojis: true,
+            dateTimeFormat: DateTimeFormat.onlyTimeAndSinceStart,
+          ),
+          level: EnvConfig.isDev ? Level.debug : Level.info,
+        );
+
+  void debug(String message, {String? tag}) {
     if (EnvConfig.isDev) {
-      _log('DEBUG', message, tag: tag);
+      _logger.d(_formatMessage(message, tag));
     }
   }
 
-  static void info(String message, {String? tag}) {
-    _log('INFO', message, tag: tag);
+  void info(String message, {String? tag}) {
+    _logger.i(_formatMessage(message, tag));
   }
 
-  static void warning(String message, {String? tag}) {
-    _log('WARNING', message, tag: tag);
+  void warning(String message, {String? tag}) {
+    _logger.w(_formatMessage(message, tag));
   }
 
-  static void error(String message, {String? tag, Object? error, StackTrace? stackTrace}) {
-    _log('ERROR', message, tag: tag);
-    if (error != null) {
-      debugPrint('Error: $error');
-    }
-    if (stackTrace != null) {
-      debugPrint('StackTrace: $stackTrace');
-    }
+  void error(
+    String message, {
+    String? tag,
+    Object? error,
+    StackTrace? stackTrace,
+  }) {
+    _logger.e(_formatMessage(message, tag), error: error, stackTrace: stackTrace);
   }
 
-  static void _log(String level, String message, {String? tag}) {
-    final tagStr = tag != null ? '[$tag] ' : '';
-    debugPrint('[$level] $tagStr$message');
+  String _formatMessage(String message, String? tag) {
+    return tag != null ? '[$tag] $message' : message;
   }
 }
 

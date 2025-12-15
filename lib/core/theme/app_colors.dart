@@ -6,7 +6,7 @@ abstract class AppColors {
   // ---------------------------------------------------------------------------
   // BRAND COLORS - PRIMARY (Yeşil)
   // ---------------------------------------------------------------------------
-  static const Color primary = Color(0xFF3FA34D);
+  static const Color primary = Color(0xFF2E9E4F);
   static const Color primaryLight = Color(0xFF7CD37E);
   static const Color primaryDark = Color(0xFF0F6B35);
 

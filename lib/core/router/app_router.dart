@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:toplansin_cleanarch/core/router/route_names.dart';
+import 'package:toplansin_cleanarch/presentation/pages/auth_test.dart';
+import 'package:toplansin_cleanarch/presentation/pages/splash/splash_page.dart';
 
 /// Ana router yapılandırması
 class AppRouter {
@@ -10,18 +12,23 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: RoutePaths.splash,
+    initialLocation: '/', 
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
         path: RoutePaths.splash,
         name: RouteNames.splash,
-        builder: (context, state) => const _PlaceholderPage(title: 'Splash'),
+        builder: (context, state) => const SplashPage(),
       ),
       GoRoute(
         path: RoutePaths.home,
         name: RouteNames.home,
         builder: (context, state) => const _PlaceholderPage(title: 'Home'),
+      ),
+      GoRoute(
+        path: '/auth-test',
+        name: 'auth-test',
+        builder: (context, state) => const AuthTestPage(),
       ),
     ],
   );
