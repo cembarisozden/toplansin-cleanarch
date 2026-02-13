@@ -37,5 +37,6 @@ abstract class FirebaseModule {
 
   @lazySingleton
   FirebaseRemoteConfig get remoteConfig => FirebaseRemoteConfig.instance;
+
   
 }

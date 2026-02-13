@@ -9,11 +9,14 @@ abstract class AppDimensions {
   static const double spacing0 = 0;
   static const double spacing2 = 2;
   static const double spacing4 = 4;
+  static const double spacing6 = 6;
   static const double spacing8 = 8;
   static const double spacing12 = 12;
   static const double spacing16 = 16;
   static const double spacing20 = 20;
   static const double spacing24 = 24;
+  static const double spacing28 = 28;
+  static const double spacing30 = 30;
   static const double spacing32 = 32;
   static const double spacing40 = 40;
   static const double spacing48 = 48;
@@ -26,6 +29,7 @@ abstract class AppDimensions {
   static const double radiusNone = 0;
   static const double radiusXs = 4;
   static const double radiusSm = 8;
+  static const double radius = 10;
   static const double radiusMd = 12;
   static const double radiusLg = 16;
   static const double radiusXl = 24;
@@ -34,6 +38,7 @@ abstract class AppDimensions {
   // BorderRadius objects
   static BorderRadius get borderRadiusXs => BorderRadius.circular(radiusXs);
   static BorderRadius get borderRadiusSm => BorderRadius.circular(radiusSm);
+  static BorderRadius get borderRadius => BorderRadius.circular(radius);
   static BorderRadius get borderRadiusMd => BorderRadius.circular(radiusMd);
   static BorderRadius get borderRadiusLg => BorderRadius.circular(radiusLg);
   static BorderRadius get borderRadiusXl => BorderRadius.circular(radiusXl);
@@ -60,8 +65,8 @@ abstract class AppDimensions {
   // INPUT FIELD
   // ---------------------------------------------------------------------------
   static const double inputHeight = 48;
-  static const double inputBorderWidth = 1;
-  static const double inputFocusBorderWidth = 2;
+  static const double inputBorderWidth = 0.5;
+  static const double inputFocusBorderWidth = 1;
 
   // ---------------------------------------------------------------------------
   // CARD

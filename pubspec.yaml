@@ -70,6 +70,7 @@ dependencies:
   # State Management (BLoC)
   flutter_bloc: ^9.1.0
   bloc: ^9.0.0
+  bloc_concurrency: ^0.3.0
   
   # Network
   dio: ^5.8.0+1
@@ -102,9 +103,23 @@ dependencies:
 
   flutter_screenutil: ^5.9.3
 
+  # App & Device Info
+  package_info_plus: ^8.1.1 
+  device_info_plus: ^11.3.1
+
+  # Social Sign-In
+  google_sign_in: ^7.2.0
+  sign_in_with_apple: ^7.0.1
+  flutter_svg: ^2.0.17
+  google_fonts: ^6.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # App Icon Generator
+  flutter_launcher_icons: ^0.14.4
+
 
   # ----------------------------
   # CODE GENERATION
@@ -141,6 +156,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/icons/
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/yeni_logo_1024.png"
+  min_sdk_android: 21 # Android min sdk
+  adaptive_icon_background: "#FFFFFF" # Primary color
+  adaptive_icon_foreground: "assets/images/yeni_logo_1024.png"
+  remove_alpha_ios: true
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

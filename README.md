@@ -104,6 +104,9 @@ dart run build_runner build --delete-conflicting-outputs
 
 # Run the app (development)
 flutter run --flavor dev -t lib/main.dart
+
+# Run dev + seed mock venues to Firestore (dev Firestore'a örnek veri ekler)
+flutter run --flavor dev -t lib/main.dart --dart-define=ENV=dev --dart-define=SEED_VENUES=true
 ```
 
 ---

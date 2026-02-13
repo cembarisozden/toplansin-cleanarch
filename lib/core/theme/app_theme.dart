@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 import 'app_dimensions.dart';
@@ -18,26 +19,27 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: LightColorScheme.scheme,
-      textTheme: AppTypography.lightTextTheme,
-      scaffoldBackgroundColor: AppColors.background,
+      textTheme: GoogleFonts.poppinsTextTheme(AppTypography.textTheme),
+      scaffoldBackgroundColor: LightColors.background,
 
       // AppBar
-      appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.surface,
-        foregroundColor: AppColors.textPrimary,
+      appBarTheme: AppBarTheme(
+        backgroundColor: LightColors.surface,
+        foregroundColor: LightColors.textPrimary,
         elevation: AppDimensions.appBarElevation,
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         titleTextStyle: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: AppColors.textPrimary,
+          color: LightColors.textPrimary,
+          fontFamily: 'Poppins',
         ),
       ),
 
       // Card
       cardTheme: CardThemeData(
-        color: AppColors.card,
+        color: LightColors.card,
         elevation: AppDimensions.cardElevation,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.cardRadius),
@@ -98,23 +100,23 @@ class AppTheme {
       // Input Decoration
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.surface,
+        fillColor: AppColors.white,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.spacing16,
           vertical: AppDimensions.spacing12,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
-          borderSide: const BorderSide(color: AppColors.border),
+          borderRadius: BorderRadius.circular(AppDimensions.radius),
+          borderSide: BorderSide(color: LightColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
-          borderSide: const BorderSide(color: AppColors.border),
+          borderSide: BorderSide(color: LightColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
-          borderSide: const BorderSide(
-            color: AppColors.primary,
+          borderSide: BorderSide(
+            color: LightColors.border,
             width: AppDimensions.inputFocusBorderWidth,
           ),
         ),
@@ -129,22 +131,22 @@ class AppTheme {
             width: AppDimensions.inputFocusBorderWidth,
           ),
         ),
-        hintStyle: const TextStyle(color: AppColors.textHint),
-        labelStyle: const TextStyle(color: AppColors.textSecondary),
+        hintStyle: TextStyle(color: LightColors.textHint),
+        labelStyle: TextStyle(color: LightColors.textSecondary),
       ),
 
       // Divider
-      dividerTheme: const DividerThemeData(
-        color: AppColors.divider,
+      dividerTheme: DividerThemeData(
+        color: LightColors.divider,
         thickness: AppDimensions.dividerThickness,
         space: 0,
       ),
 
       // BottomNavigationBar
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: AppColors.surface,
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: LightColors.surface,
         selectedItemColor: AppColors.primary,
-        unselectedItemColor: AppColors.textSecondary,
+        unselectedItemColor: LightColors.textSecondary,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
@@ -197,16 +199,16 @@ class AppTheme {
 
       // Dialog
       dialogTheme: DialogThemeData(
-        backgroundColor: AppColors.surface,
+        backgroundColor: LightColors.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusMd),
         ),
       ),
 
       // BottomSheet
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: AppColors.surface,
-        shape: RoundedRectangleBorder(
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: LightColors.surface,
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(AppDimensions.radiusLg),
           ),
@@ -223,26 +225,27 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       colorScheme: DarkColorScheme.scheme,
-      textTheme: AppTypography.darkTextTheme,
-      scaffoldBackgroundColor: AppColors.backgroundDark,
+      textTheme: GoogleFonts.poppinsTextTheme(AppTypography.textTheme),
+      scaffoldBackgroundColor: DarkColors.background,
 
       // AppBar
-      appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.surfaceDark,
-        foregroundColor: AppColors.textPrimaryDark,
+      appBarTheme: AppBarTheme(
+        backgroundColor: DarkColors.surface,
+        foregroundColor: DarkColors.textPrimary,
         elevation: AppDimensions.appBarElevation,
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle.light,
         titleTextStyle: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: AppColors.textPrimaryDark,
+          color: DarkColors.textPrimary,
+          fontFamily: 'Poppins',
         ),
       ),
 
       // Card
       cardTheme: CardThemeData(
-        color: AppColors.cardDark,
+        color: DarkColors.card,
         elevation: AppDimensions.cardElevation,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.cardRadius),
@@ -303,18 +306,18 @@ class AppTheme {
       // Input Decoration
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.cardDark,
+        fillColor: DarkColors.card,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.spacing16,
           vertical: AppDimensions.spacing12,
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
-          borderSide: const BorderSide(color: AppColors.borderDark),
+          borderSide: BorderSide(color: DarkColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
-          borderSide: const BorderSide(color: AppColors.borderDark),
+          borderSide: BorderSide(color: DarkColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
@@ -334,22 +337,22 @@ class AppTheme {
             width: AppDimensions.inputFocusBorderWidth,
           ),
         ),
-        hintStyle: const TextStyle(color: AppColors.textHintDark),
-        labelStyle: const TextStyle(color: AppColors.textSecondaryDark),
+        hintStyle: TextStyle(color: DarkColors.textHint),
+        labelStyle: TextStyle(color: DarkColors.textSecondary),
       ),
 
       // Divider
-      dividerTheme: const DividerThemeData(
-        color: AppColors.dividerDark,
+      dividerTheme: DividerThemeData(
+        color: DarkColors.divider,
         thickness: AppDimensions.dividerThickness,
         space: 0,
       ),
 
       // BottomNavigationBar
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: AppColors.surfaceDark,
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: DarkColors.surface,
         selectedItemColor: AppColors.primaryLight,
-        unselectedItemColor: AppColors.textSecondaryDark,
+        unselectedItemColor: DarkColors.textSecondary,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
@@ -402,16 +405,16 @@ class AppTheme {
 
       // Dialog
       dialogTheme: DialogThemeData(
-        backgroundColor: AppColors.cardDark,
+        backgroundColor: DarkColors.card,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusMd),
         ),
       ),
 
       // BottomSheet
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: AppColors.cardDark,
-        shape: RoundedRectangleBorder(
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: DarkColors.card,
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(AppDimensions.radiusLg),
           ),

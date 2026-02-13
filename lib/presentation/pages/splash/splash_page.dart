@@ -38,7 +38,7 @@ class _SplashPageState extends State<SplashPage>
 
     // %80'e kadar normal hızda dol
     await _controller.animateTo(
-      0.80,
+      0.60,
       duration: const Duration(milliseconds: 2000),
       curve: Curves.easeOut,
     );
@@ -46,7 +46,10 @@ class _SplashPageState extends State<SplashPage>
     // Servisler hazır mı?
     if (_servicesReady) {
       // Hazırsa hızlıca bitir
-      await _controller.animateTo(1.0, duration: const Duration(milliseconds: 300));
+      await _controller.animateTo(
+        1.0,
+        duration: const Duration(milliseconds: 300),
+      );
       _navigateNext();
     } else {
       // Hazır değilse yavaşça %95'e git
@@ -60,7 +63,10 @@ class _SplashPageState extends State<SplashPage>
       await _waitForServices();
 
       // Artık hazır, tamamla
-      await _controller.animateTo(1.0, duration: const Duration(milliseconds: 200));
+      await _controller.animateTo(
+        1.0,
+        duration: const Duration(milliseconds: 200),
+      );
       _navigateNext();
     }
   }
@@ -78,9 +84,9 @@ class _SplashPageState extends State<SplashPage>
 
   void _navigateNext() {
     if (_initService.isLoggedIn) {
-      context.goNamed(RouteNames.home);
+      context.goNamed(RouteNames.onboarding);
     } else {
-      context.goNamed('auth-test');
+      context.goNamed(RouteNames.onboarding);
     }
   }
 
@@ -90,44 +96,42 @@ class _SplashPageState extends State<SplashPage>
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primary,
-      body: Stack(
-        children: [
-          // Logo - tam ortada
-          Center(
-            child: Image.asset(
-              'assets/images/logo2.png',
-              width: 380.w,
-              fit: BoxFit.contain,
-            ),
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Stack(
+      children: [
+        // 1. Arka plan görsel (tam ekran)
+        Positioned.fill(
+          child: Image.asset(
+            'assets/images/splash_logo.png',
+            fit: BoxFit.cover,
           ),
-          // Progress Bar - altta
-          Positioned(
-            left: 90.w,
-            right: 90.w,
-            bottom: 90.h,
-            child: AnimatedBuilder(
-              animation: _controller,
-              builder: (context, child) {
-                return ClipRRect(
-                  borderRadius: BorderRadius.circular(4.r),
-                  child: LinearProgressIndicator(
-                    value: _controller.value,
-                    minHeight: 8.h,
-                    backgroundColor: AppColors.white.withOpacity(0.3),
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      AppColors.white,
-                    ),
+        ),
+        // 3. Progress Bar - altta
+        Positioned(
+          left: 90.w,
+          right: 90.w,
+          bottom: 90.h,
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(4.r),
+                child: LinearProgressIndicator(
+                  value: _controller.value,
+                  minHeight: 8.h,
+                  backgroundColor: AppColors.white.withOpacity(0.3),
+                  valueColor: const AlwaysStoppedAnimation<Color>(
+                    AppColors.white,
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
 }
